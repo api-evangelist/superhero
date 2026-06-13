@@ -1,0 +1,124 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+provider: Superhero API
+providerId: superhero
+publisherName: Superhero API
+serviceCategory: API
+created: '2026-06-13'
+modified: '2026-06-13'
+tags:
+  - Superheroes
+  - Comics
+  - Characters
+  - Entertainment
+  - FinOps
+  - Cost Management
+  - FOCUS
+description: >-
+  FinOps framework definition for the Superhero API. The service is free with no published metered
+  billing; direct monetary cost is zero. FinOps value here lies in tracking indirect costs —
+  engineering time, downstream data pipeline load, and compute consumed by consumers of the data.
+principles:
+  - name: Visibility
+    description: >-
+      Track API call volume by consuming team and application even though the direct cost is zero,
+      to understand operational load and identify runaway clients.
+  - name: Allocation
+    description: >-
+      Tag each integration with the consuming team, environment, and feature to attribute any
+      indirect costs (compute, caching infrastructure, data storage) accurately.
+  - name: Optimization
+    description: >-
+      Cache character data locally when possible — the 731-record dataset is small and changes
+      infrequently, making client-side or CDN caching highly effective at reducing outbound calls.
+  - name: Accountability
+    description: >-
+      Because the API is free, the primary accountability concern is availability risk — a single
+      free external dependency with no SLA. Budget for a fallback data copy or a mirror.
+domains:
+  - name: Understand Usage and Cost
+    capabilities:
+      - Data Ingestion
+      - Allocation
+      - Reporting and Analytics
+      - Anomaly Management
+  - name: Quantify Business Value
+    capabilities:
+      - Planning and Estimating
+      - Forecasting
+      - Budgeting
+      - Benchmarking
+      - Unit Economics
+  - name: Optimize Usage and Cost
+    capabilities:
+      - Architecting for Cloud
+      - Rate Optimization
+      - Workload Optimization
+      - Cloud Sustainability
+      - Licensing and SaaS
+  - name: Manage the FinOps Practice
+    capabilities:
+      - FinOps Practice Operations
+      - FinOps Education and Enablement
+      - Invoicing and Chargeback
+      - Onboarding Workloads
+      - Intersecting Disciplines
+billingModel:
+  pricingCategory: Free
+  billingFrequency: None
+  billingCurrency: USD
+  chargeCategories:
+    - Usage
+  chargeFrequency: None
+focusColumns:
+  ServiceName: Superhero API
+  ServiceCategory: Developer Tools / API
+  ProviderName: Superhero API
+  PublisherName: Superhero API
+  InvoiceIssuerName: Superhero API
+  PricingCategory: Free
+  PricingUnit: request
+  BillingCurrency: USD
+  ChargeCategory: Usage
+meters:
+  - name: api_requests
+    description: Count of API requests made to the Superhero API
+    unit: request
+    aggregation: sum
+    dimensions:
+      - endpoint
+      - character_id
+      - consumer_team
+      - environment
+  - name: data_egress
+    description: Bytes returned in API responses
+    unit: GB
+    aggregation: sum
+    dimensions:
+      - endpoint
+      - consumer_team
+apis:
+  - name: Superhero API
+    baseURL: https://superheroapi.com/api.php
+    tags:
+      - Superheroes
+      - Comics
+      - Characters
+    serviceName: Superhero API
+    serviceCategory: API
+unitEconomics:
+  - name: Requests per Consumer per Day
+    metric: api_requests / active_consumers
+    target: TBD
+  - name: Cache Hit Rate
+    metric: cached_responses / (cached_responses + api_requests)
+    target: '>0.80'
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

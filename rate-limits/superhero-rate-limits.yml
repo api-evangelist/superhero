@@ -1,0 +1,67 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Superhero API
+providerId: superhero
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: false
+tags:
+  - Superheroes
+  - Comics
+  - Characters
+  - Entertainment
+  - Rate Limiting
+description: >-
+  The Superhero API does not publish explicit rate limit values. The service is free and
+  community-maintained; access tokens are issued per GitHub account. Limits below represent
+  reasonable-use estimates. Clients should implement backoff on HTTP 429 or 503 responses.
+sources:
+  - https://www.superheroapi.com/
+headers:
+  limit: X-RateLimit-Limit
+  remaining: X-RateLimit-Remaining
+  reset: X-RateLimit-Reset
+  retryAfter: Retry-After
+responseCodes:
+  throttled: 429
+  serviceUnavailable: 503
+limits:
+  - tier: free
+    name: Free Tier — Requests Per Minute
+    scope: api-key
+    metric: requests_per_minute
+    limit: 60
+    burst: 100
+    timeFrame: minute
+    applies:
+      - Superhero API
+  - tier: free
+    name: Free Tier — Requests Per Day
+    scope: api-key
+    metric: requests_per_day
+    limit: 10000
+    timeFrame: day
+    applies:
+      - Superhero API
+policies:
+  - name: Token in URL
+    description: >-
+      The access token is embedded directly in the request URL path
+      (https://superheroapi.com/api.php/{access-token}/{id}). Keep tokens private; do not expose
+      them in public repositories or client-side JavaScript.
+  - name: GitHub Login Required
+    description: >-
+      Obtain your access token by authenticating with GitHub at superheroapi.com. Tokens are
+      personal and non-transferable.
+  - name: Backoff Strategy
+    description: >-
+      Implement exponential backoff with jitter when receiving 429 or 503 responses. Honor the
+      Retry-After header when present.
+  - name: Fair Use
+    description: >-
+      The API is a free community resource. Sustained high-volume traffic or abusive request
+      patterns may result in token revocation without notice.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

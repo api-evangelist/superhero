@@ -1,0 +1,67 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Superhero API
+providerId: superhero
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: false
+tags:
+  - Superheroes
+  - Comics
+  - Characters
+  - Entertainment
+description: >-
+  The Superhero API is offered free of charge. Developers obtain an access token by signing in with
+  their GitHub account at superheroapi.com and embed the token in request URLs. No paid tiers or
+  premium plans are publicly documented; the service is community-maintained and free to use.
+sources:
+  - https://www.superheroapi.com/
+plans:
+  - id: superhero-free
+    name: Free
+    type: freemium
+    description: >-
+      Free access to all 731 superhero and villain records via token-in-URL authentication. Sign in
+      with GitHub to obtain your access token. No published monthly request cap or rate limit ceiling
+      beyond reasonable use.
+    entries:
+      - label: API Requests
+        description: API requests across all character endpoints
+        name: api_requests
+        type: quota
+        metric: requests
+        limit: -1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://superheroapi.com/api.php
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Rate Limit
+        description: Requests per minute; no hard limit published — reasonable use expected
+        name: rate_limit
+        type: rate
+        metric: requests_per_minute
+        limit: 60
+        timeFrame: minute
+        geo: global
+        domains:
+          - https://superheroapi.com/api.php
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: 731 Superhero & Villain Records
+      - name: Power Stats Endpoint
+      - name: Biography Endpoint
+      - name: Appearance Endpoint
+      - name: Work & Connections Endpoints
+      - name: Character Image Endpoint
+      - name: Search by Name
+      - name: Lookup by ID
+      - name: Community Support
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -1,0 +1,80 @@
+aid: superhero
+name: Superhero API
+description: >-
+  The Superhero API is a quantified and programmatically accessible data source of superheroes and
+  villains from across comic book universes. It provides comprehensive character data for 731 heroes
+  and villains including power stats, biography, appearance, work, connections, and image data from
+  Marvel, DC, and other publishers. Developers authenticate via an API access token obtained through
+  GitHub login and query characters by ID or name.
+kind: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Superheroes
+  - Comics
+  - Characters
+  - Marvel
+  - DC Comics
+  - Entertainment
+  - Open Data
+url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+access: 3rd-Party
+position: Consuming
+apis:
+  - aid: superhero:superhero-api
+    name: Superhero API
+    description: >-
+      REST API providing comprehensive data on 731 superheroes and villains from Marvel, DC, and other
+      comic universes. Characters are accessible by numeric ID or by name search. Each character record
+      includes powerstats (intelligence, strength, speed, durability, power, combat), biography (full
+      name, alter egos, first appearance, publisher, alignment), appearance (gender, race, height,
+      weight, eye color, hair color), work, connections, and a portrait image URL. Authentication uses
+      an access token embedded in the request URL, obtained by logging in with GitHub at
+      superheroapi.com.
+    humanURL: https://www.superheroapi.com/
+    baseURL: https://superheroapi.com/api.php
+    tags:
+      - Superheroes
+      - Villains
+      - Comics
+      - Characters
+      - Power Stats
+      - Biography
+      - Appearance
+    properties:
+      - type: Documentation
+        url: https://www.superheroapi.com/api.html
+      - type: Plans
+        url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/plans/superhero-plans-pricing.yml
+      - type: RateLimits
+        url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/rate-limits/superhero-rate-limits.yml
+      - type: FinOps
+        url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/finops/superhero-finops.yml
+common:
+  - type: Website
+    url: https://www.superheroapi.com/
+  - type: Documentation
+    url: https://www.superheroapi.com/api.html
+  - type: GitHubOrg
+    url: https://github.com/topics/superheroapi
+  - type: LinkedIn
+    url: https://www.linkedin.com/
+  - type: Blog
+    url: https://www.superheroapi.com/
+  - type: Pricing
+    url: https://www.superheroapi.com/
+  - type: StatusPage
+    url: https://www.superheroapi.com/
+  - type: X
+    url: https://x.com/
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/plans/superhero-plans-pricing.yml
+  - type: RateLimits
+    url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/rate-limits/superhero-rate-limits.yml
+  - type: FinOps
+    url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/finops/superhero-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
