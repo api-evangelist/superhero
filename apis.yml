@@ -46,6 +46,14 @@ apis:
     properties:
       - type: Documentation
         url: https://www.superheroapi.com/api.html
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/openapi/openapi.yml
+      - type: JSONSchema
+        url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/json-schema/character.json
+      - type: Vocabulary
+        url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/vocabulary/vocabulary.yml
+      - type: JSONLDContext
+        url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/json-ld/context.jsonld
       - type: Plans
         url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/plans/superhero-plans-pricing.yml
       - type: RateLimits

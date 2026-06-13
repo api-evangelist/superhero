@@ -1,0 +1,102 @@
+name: Superhero API Vocabulary
+description: >-
+  Domain vocabulary for the Superhero API covering superheroes and villains from Marvel, DC,
+  and other comic book universes.
+url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/vocabulary/vocabulary.yml
+terms:
+  - term: character
+    label: Character
+    description: >-
+      A superhero or villain entity in the Superhero API database, identified by a unique numeric
+      ID between 1 and 731.
+    related:
+      - hero
+      - villain
+  - term: powerstats
+    label: Power Stats
+    description: >-
+      A set of six numeric ratings (0–100) that quantify a character's core combat and
+      extraordinary capabilities: intelligence, strength, speed, durability, power, and combat.
+    fields:
+      - intelligence
+      - strength
+      - speed
+      - durability
+      - power
+      - combat
+  - term: biography
+    label: Biography
+    description: >-
+      Narrative and factual background information about a character, including their real name,
+      alter egos, known aliases, birthplace, first comic appearance, publisher, and moral alignment.
+    fields:
+      - full-name
+      - alter-egos
+      - aliases
+      - place-of-birth
+      - first-appearance
+      - publisher
+      - alignment
+  - term: appearance
+    label: Appearance
+    description: >-
+      Physical descriptors for a character including gender, race/species, height, weight, eye
+      color, and hair color.
+    fields:
+      - gender
+      - race
+      - height
+      - weight
+      - eye-color
+      - hair-color
+  - term: work
+    label: Work
+    description: >-
+      A character's civilian or heroic occupation and primary operating base location.
+    fields:
+      - occupation
+      - base
+  - term: connections
+    label: Connections
+    description: >-
+      Interpersonal relationships for a character, including group/team affiliations and
+      family or personal relatives.
+    fields:
+      - group-affiliation
+      - relatives
+  - term: image
+    label: Image
+    description: >-
+      A portrait image for the character hosted on superheroapi.com, returned as a direct URL.
+    fields:
+      - url
+  - term: alignment
+    label: Alignment
+    description: >-
+      The moral alignment of a character. Values are 'good' (heroes and protagonist allies),
+      'bad' (villains and antagonists), or 'neutral' (characters who do not clearly fall on
+      either side).
+    values:
+      - good
+      - bad
+      - neutral
+  - term: access-token
+    label: Access Token
+    description: >-
+      A unique authentication credential embedded directly in the API request URL path, obtained
+      by logging in with a GitHub account at superheroapi.com.
+  - term: publisher
+    label: Publisher
+    description: >-
+      The comic book company that originally created and published the character. Common values
+      include 'Marvel Comics', 'DC Comics', 'Dark Horse Comics', 'Image Comics', and others.
+  - term: alter-ego
+    label: Alter Ego
+    description: >-
+      An alternative identity assumed by a character, distinct from their primary heroic or
+      villain persona.
+  - term: alias
+    label: Alias
+    description: >-
+      An additional name or nickname by which a character is known, separate from their
+      primary name or alter ego.

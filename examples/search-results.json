@@ -1,0 +1,88 @@
+{
+  "response": "success",
+  "results-for": "batman",
+  "results": [
+    {
+      "response": "success",
+      "id": "69",
+      "name": "Batgirl",
+      "powerstats": {
+        "intelligence": "88",
+        "strength": "11",
+        "speed": "33",
+        "durability": "28",
+        "power": "36",
+        "combat": "90"
+      },
+      "biography": {
+        "full-name": "Barbara Gordon",
+        "alter-egos": "No alter egos found.",
+        "aliases": ["Oracle"],
+        "place-of-birth": "Gotham City, New Jersey",
+        "first-appearance": "Detective Comics #359",
+        "publisher": "DC Comics",
+        "alignment": "good"
+      },
+      "appearance": {
+        "gender": "Female",
+        "race": "Human",
+        "height": ["5'11\"", "180 cm"],
+        "weight": ["126 lb", "57 kg"],
+        "eye-color": "green",
+        "hair-color": "red"
+      },
+      "work": {
+        "occupation": "Librarian, crime fighter",
+        "base": "Gotham City, New Jersey"
+      },
+      "connections": {
+        "group-affiliation": "Batman Family, Birds of Prey",
+        "relatives": "James Gordon (father)"
+      },
+      "image": {
+        "url": "https://www.superheroapi.com/images/api/69/image.jpg"
+      }
+    },
+    {
+      "response": "success",
+      "id": "70",
+      "name": "Batman",
+      "powerstats": {
+        "intelligence": "100",
+        "strength": "26",
+        "speed": "27",
+        "durability": "50",
+        "power": "47",
+        "combat": "100"
+      },
+      "biography": {
+        "full-name": "Bruce Wayne",
+        "alter-egos": "No alter egos found.",
+        "aliases": ["Dark Knight", "Caped Crusader"],
+        "place-of-birth": "Crest Hill, Bristol Township, NJ",
+        "first-appearance": "Detective Comics #27",
+        "publisher": "DC Comics",
+        "alignment": "good"
+      },
+      "appearance": {
+        "gender": "Male",
+        "race": "Human",
+        "height": ["6'2\"", "188 cm"],
+        "weight": ["210 lb", "95 kg"],
+        "eye-color": "blue",
+        "hair-color": "black"
+      },
+      "work": {
+        "occupation": "Businessman",
+        "base": "Batcave, Stately Wayne Manor, Gotham City, New Jersey"
+      },
+      "connections": {
+        "group-affiliation": "Batman Family, Batman Incorporated, Justice League, Outsiders",
+        "relatives": "Thomas Wayne (father, deceased), Martha Wayne (mother, deceased)"
+      },
+      "image": {
+        "url": "https://www.superheroapi.com/images/api/70/image.jpg"
+      }
+    }
+  ]
+}

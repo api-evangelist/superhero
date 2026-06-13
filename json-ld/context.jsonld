@@ -1,0 +1,97 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "superhero": "https://www.superheroapi.com/vocab#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Character": "schema:Person",
+    "id": "@id",
+    "name": "schema:name",
+    "response": "superhero:response",
+
+    "powerstats": {
+      "@id": "superhero:powerstats",
+      "@type": "@id"
+    },
+    "intelligence": {
+      "@id": "superhero:intelligence",
+      "@type": "xsd:string"
+    },
+    "strength": {
+      "@id": "superhero:strength",
+      "@type": "xsd:string"
+    },
+    "speed": {
+      "@id": "superhero:speed",
+      "@type": "xsd:string"
+    },
+    "durability": {
+      "@id": "superhero:durability",
+      "@type": "xsd:string"
+    },
+    "power": {
+      "@id": "superhero:power",
+      "@type": "xsd:string"
+    },
+    "combat": {
+      "@id": "superhero:combat",
+      "@type": "xsd:string"
+    },
+
+    "biography": {
+      "@id": "superhero:biography",
+      "@type": "@id"
+    },
+    "full-name": "schema:name",
+    "alter-egos": "superhero:alterEgos",
+    "aliases": {
+      "@id": "schema:alternateName",
+      "@container": "@set"
+    },
+    "place-of-birth": "schema:birthPlace",
+    "first-appearance": "superhero:firstAppearance",
+    "publisher": "schema:publisher",
+    "alignment": "superhero:alignment",
+
+    "appearance": {
+      "@id": "superhero:appearance",
+      "@type": "@id"
+    },
+    "gender": "schema:gender",
+    "race": "schema:ethnicity",
+    "height": {
+      "@id": "schema:height",
+      "@container": "@set"
+    },
+    "weight": {
+      "@id": "schema:weight",
+      "@container": "@set"
+    },
+    "eye-color": "superhero:eyeColor",
+    "hair-color": "superhero:hairColor",
+
+    "work": {
+      "@id": "superhero:work",
+      "@type": "@id"
+    },
+    "occupation": "schema:jobTitle",
+    "base": "superhero:operatingBase",
+
+    "connections": {
+      "@id": "superhero:connections",
+      "@type": "@id"
+    },
+    "group-affiliation": "superhero:groupAffiliation",
+    "relatives": "schema:relatedTo",
+
+    "image": {
+      "@id": "schema:image",
+      "@type": "@id"
+    },
+    "url": {
+      "@id": "schema:url",
+      "@type": "@id"
+    }
+  }
+}

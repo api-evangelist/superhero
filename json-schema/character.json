@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/json-schema/character.json",
+  "title": "Character",
+  "description": "Complete character record for a superhero or villain from the Superhero API, including powerstats, biography, appearance, work, connections, and image.",
+  "type": "object",
+  "properties": {
+    "response": {
+      "type": "string",
+      "enum": ["success", "error"],
+      "description": "Response status indicator."
+    },
+    "id": {
+      "type": "string",
+      "description": "Numeric character ID returned as a string.",
+      "example": "70"
+    },
+    "name": {
+      "type": "string",
+      "description": "The character's superhero or villain name.",
+      "example": "Batman"
+    },
+    "powerstats": {
+      "$ref": "#/$defs/Powerstats"
+    },
+    "biography": {
+      "$ref": "#/$defs/Biography"
+    },
+    "appearance": {
+      "$ref": "#/$defs/Appearance"
+    },
+    "work": {
+      "$ref": "#/$defs/Work"
+    },
+    "connections": {
+      "$ref": "#/$defs/Connections"
+    },
+    "image": {
+      "$ref": "#/$defs/Image"
+    }
+  },
+  "required": ["response"],
+  "$defs": {
+    "Powerstats": {
+      "title": "Powerstats",
+      "description": "Numeric ratings (typically 0–100, or 'null') for the six core power attributes.",
+      "type": "object",
+      "properties": {
+        "intelligence": {
+          "type": "string",
+          "description": "Intelligence rating (0–100 or 'null').",
+          "example": "100"
+        },
+        "strength": {
+          "type": "string",
+          "description": "Strength rating (0–100 or 'null').",
+          "example": "26"
+        },
+        "speed": {
+          "type": "string",
+          "description": "Speed rating (0–100 or 'null').",
+          "example": "27"
+        },
+        "durability": {
+          "type": "string",
+          "description": "Durability rating (0–100 or 'null').",
+          "example": "50"
+        },
+        "power": {
+          "type": "string",
+          "description": "Power rating (0–100 or 'null').",
+          "example": "47"
+        },
+        "combat": {
+          "type": "string",
+          "description": "Combat rating (0–100 or 'null').",
+          "example": "100"
+        }
+      }
+    },
+    "Biography": {
+      "title": "Biography",
+      "description": "Biographical details about a character.",
+      "type": "object",
+      "properties": {
+        "full-name": {
+          "type": "string",
+          "description": "The character's real or full name.",
+          "example": "Bruce Wayne"
+        },
+        "alter-egos": {
+          "type": "string",
+          "description": "Alternate ego names, or 'No alter egos found.' if none.",
+          "example": "No alter egos found."
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of known aliases.",
+          "example": ["Dark Knight", "Caped Crusader"]
+        },
+        "place-of-birth": {
+          "type": "string",
+          "description": "Location where the character was born.",
+          "example": "Crest Hill, Bristol Township, NJ"
+        },
+        "first-appearance": {
+          "type": "string",
+          "description": "Comic issue of the character's first appearance.",
+          "example": "Detective Comics #27"
+        },
+        "publisher": {
+          "type": "string",
+          "description": "The comic publisher.",
+          "example": "DC Comics"
+        },
+        "alignment": {
+          "type": "string",
+          "enum": ["good", "bad", "neutral"],
+          "description": "Moral alignment of the character.",
+          "example": "good"
+        }
+      }
+    },
+    "Appearance": {
+      "title": "Appearance",
+      "description": "Physical appearance attributes of a character.",
+      "type": "object",
+      "properties": {
+        "gender": {
+          "type": "string",
+          "description": "Character's gender.",
+          "example": "Male"
+        },
+        "race": {
+          "type": "string",
+          "description": "Character's race or species.",
+          "example": "Human"
+        },
+        "height": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Height in imperial and metric units.",
+          "example": ["6'2\"", "188 cm"]
+        },
+        "weight": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Weight in imperial and metric units.",
+          "example": ["210 lb", "95 kg"]
+        },
+        "eye-color": {
+          "type": "string",
+          "description": "Character's eye color.",
+          "example": "blue"
+        },
+        "hair-color": {
+          "type": "string",
+          "description": "Character's hair color.",
+          "example": "black"
+        }
+      }
+    },
+    "Work": {
+      "title": "Work",
+      "description": "Occupation and home base of a character.",
+      "type": "object",
+      "properties": {
+        "occupation": {
+          "type": "string",
+          "description": "Character's occupation or profession.",
+          "example": "Businessman"
+        },
+        "base": {
+          "type": "string",
+          "description": "Character's primary operating base.",
+          "example": "Batcave, Stately Wayne Manor, Gotham City, New Jersey"
+        }
+      }
+    },
+    "Connections": {
+      "title": "Connections",
+      "description": "Team affiliations and personal relationships.",
+      "type": "object",
+      "properties": {
+        "group-affiliation": {
+          "type": "string",
+          "description": "Teams or groups the character is affiliated with.",
+          "example": "Batman Family, Batman Incorporated, Justice League, Outsiders"
+        },
+        "relatives": {
+          "type": "string",
+          "description": "Known relatives or close personal connections.",
+          "example": "Thomas Wayne (father, deceased), Martha Wayne (mother, deceased)"
+        }
+      }
+    },
+    "Image": {
+      "title": "Image",
+      "description": "Portrait image URL for a character.",
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Direct URL to the character's portrait image.",
+          "example": "https://www.superheroapi.com/images/api/70/image.jpg"
+        }
+      }
+    }
+  }
+}
