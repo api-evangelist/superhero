@@ -61,6 +61,8 @@ apis:
       - type: FinOps
         url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/finops/superhero-finops.yml
 common:
+  - type: DomainSecurity
+    url: security/superhero-domain-security.yml
   - type: Website
     url: https://www.superheroapi.com/
   - type: Documentation
