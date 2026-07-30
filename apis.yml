@@ -7,7 +7,19 @@ description: >-
   Marvel, DC, and other publishers. Developers authenticate via an API access token obtained through
   GitHub login and query characters by ID or name.
 kind: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: free
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Free
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/superhero.png
 tags:
   - Superheroes
   - Comics
@@ -23,43 +35,66 @@ specificationVersion: '0.19'
 access: 3rd-Party
 position: Consuming
 apis:
-  - aid: superhero:superhero-api
-    name: Superhero API
-    description: >-
-      REST API providing comprehensive data on 731 superheroes and villains from Marvel, DC, and other
-      comic universes. Characters are accessible by numeric ID or by name search. Each character record
-      includes powerstats (intelligence, strength, speed, durability, power, combat), biography (full
-      name, alter egos, first appearance, publisher, alignment), appearance (gender, race, height,
-      weight, eye color, hair color), work, connections, and a portrait image URL. Authentication uses
-      an access token embedded in the request URL, obtained by logging in with GitHub at
-      superheroapi.com.
-    humanURL: https://www.superheroapi.com/
-    baseURL: https://superheroapi.com/api.php
-    tags:
-      - Superheroes
-      - Villains
-      - Comics
-      - Characters
-      - Power Stats
-      - Biography
-      - Appearance
-    properties:
-      - type: Documentation
-        url: https://www.superheroapi.com/api.html
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/openapi/openapi.yml
-      - type: JSONSchema
-        url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/json-schema/character.json
-      - type: Vocabulary
-        url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/vocabulary/vocabulary.yml
-      - type: JSONLDContext
-        url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/json-ld/context.jsonld
-      - type: Plans
-        url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/plans/superhero-plans-pricing.yml
-      - type: RateLimits
-        url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/rate-limits/superhero-rate-limits.yml
-      - type: FinOps
-        url: https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/finops/superhero-finops.yml
+- aid: superhero:superhero-characters-api
+  name: Superhero API Characters API
+  description: Retrieve full or partial character data by numeric ID.
+  humanURL: https://www.superheroapi.com/
+  baseURL: https://superheroapi.com/api.php
+  tags:
+  - Characters
+  properties:
+  - type: OpenAPI
+    url: openapi/superhero-characters-api-openapi.yml
+  - type: Documentation
+    url: https://www.superheroapi.com/api.html
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/json-schema/character.json
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/vocabulary/vocabulary.yml
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/json-ld/context.jsonld
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/plans/superhero-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/rate-limits/superhero-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/finops/superhero-finops.yml
+- aid: superhero:superhero-search-api
+  name: Superhero API Search API
+  description: Search for characters by name.
+  humanURL: https://www.superheroapi.com/
+  baseURL: https://superheroapi.com/api.php
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/superhero-search-api-openapi.yml
+  - type: Documentation
+    url: https://www.superheroapi.com/api.html
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/json-schema/character.json
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/vocabulary/vocabulary.yml
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/json-ld/context.jsonld
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/plans/superhero-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/rate-limits/superhero-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/superhero/refs/heads/main/finops/superhero-finops.yml
 common:
   - type: AgenticAccess
     url: agentic-access/superhero-agentic-access.yml
