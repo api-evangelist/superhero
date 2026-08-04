@@ -1,0 +1,16 @@
+{
+  "provider": "superhero",
+  "sources": [
+    "superhero-characters-api-openapi.yml",
+    "superhero-search-api-openapi.yml"
+  ],
+  "outputs": [
+    "superhero-characters-api-openapi.yml",
+    "superhero-search-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

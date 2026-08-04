@@ -1,0 +1,595 @@
+openapi: 3.0.3
+info:
+  title: Superhero API
+  description: >-
+    The Superhero API is a quantified and programmatically accessible data source of superheroes and
+    villains from across comic book universes. It provides comprehensive character data for 731 heroes
+    and villains including power stats, biography, appearance, work, connections, and image data from
+    Marvel, DC, and other publishers. Developers authenticate via an API access token obtained through
+    GitHub login and query characters by ID or name.
+  version: '1.0.0'
+  contact:
+    url: https://www.superheroapi.com/
+  license:
+    name: See superheroapi.com for terms
+    url: https://www.superheroapi.com/
+servers:
+  - url: https://superheroapi.com/api.php
+    description: Superhero API production server
+paths:
+  /{access-token}/{id}:
+    get:
+      operationId: getCharacterById
+      summary: Get character by ID
+      description: >-
+        Returns the complete character record for the superhero or villain identified by the numeric
+        ID, including all sub-sections (powerstats, biography, appearance, work, connections, image).
+      tags:
+        - Characters
+      parameters:
+        - name: access-token
+          in: path
+          required: true
+          description: API access token obtained by logging in with GitHub at superheroapi.com.
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          description: Numeric character ID (1–731).
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 731
+            example: 70
+      responses:
+        '200':
+          description: Character data returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Character'
+              example:
+                response: success
+                id: '70'
+                name: Batman
+                powerstats:
+                  intelligence: '100'
+                  strength: '26'
+                  speed: '27'
+                  durability: '50'
+                  power: '47'
+                  combat: '100'
+                biography:
+                  full-name: Bruce Wayne
+                  alter-egos: No alter egos found.
+                  aliases:
+                    - Dark Knight
+                    - Caped Crusader
+                  place-of-birth: Crest Hill, Bristol Township, NJ
+                  first-appearance: Detective Comics #27
+                  publisher: DC Comics
+                  alignment: good
+                appearance:
+                  gender: Male
+                  race: Human
+                  height:
+                    - '6''2"'
+                    - 188 cm
+                  weight:
+                    - 210 lb
+                    - 95 kg
+                  eye-color: blue
+                  hair-color: black
+                work:
+                  occupation: Businessman
+                  base: Batcave, Stately Wayne Manor, Gotham City, New Jersey
+                connections:
+                  group-affiliation: Batman Family, Batman Incorporated, Justice League, Outsiders
+                  relatives: Thomas Wayne (father, deceased), Martha Wayne (mother, deceased)
+                image:
+                  url: https://www.superheroapi.com/images/api/70/image.jpg
+        '400':
+          description: Invalid request or missing access token.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /{access-token}/{id}/powerstats:
+    get:
+      operationId: getCharacterPowerstats
+      summary: Get character power stats
+      description: Returns only the powerstats sub-section for the specified character.
+      tags:
+        - Characters
+      parameters:
+        - name: access-token
+          in: path
+          required: true
+          description: API access token obtained by logging in with GitHub at superheroapi.com.
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          description: Numeric character ID (1–731).
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 731
+            example: 70
+      responses:
+        '200':
+          description: Powerstats data returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PowerstatsResponse'
+  /{access-token}/{id}/biography:
+    get:
+      operationId: getCharacterBiography
+      summary: Get character biography
+      description: Returns only the biography sub-section for the specified character.
+      tags:
+        - Characters
+      parameters:
+        - name: access-token
+          in: path
+          required: true
+          description: API access token obtained by logging in with GitHub at superheroapi.com.
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          description: Numeric character ID (1–731).
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 731
+            example: 70
+      responses:
+        '200':
+          description: Biography data returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BiographyResponse'
+  /{access-token}/{id}/appearance:
+    get:
+      operationId: getCharacterAppearance
+      summary: Get character appearance
+      description: Returns only the appearance sub-section for the specified character.
+      tags:
+        - Characters
+      parameters:
+        - name: access-token
+          in: path
+          required: true
+          description: API access token obtained by logging in with GitHub at superheroapi.com.
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          description: Numeric character ID (1–731).
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 731
+            example: 70
+      responses:
+        '200':
+          description: Appearance data returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppearanceResponse'
+  /{access-token}/{id}/work:
+    get:
+      operationId: getCharacterWork
+      summary: Get character work
+      description: Returns only the work sub-section for the specified character.
+      tags:
+        - Characters
+      parameters:
+        - name: access-token
+          in: path
+          required: true
+          description: API access token obtained by logging in with GitHub at superheroapi.com.
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          description: Numeric character ID (1–731).
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 731
+            example: 70
+      responses:
+        '200':
+          description: Work data returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkResponse'
+  /{access-token}/{id}/connections:
+    get:
+      operationId: getCharacterConnections
+      summary: Get character connections
+      description: Returns only the connections sub-section for the specified character.
+      tags:
+        - Characters
+      parameters:
+        - name: access-token
+          in: path
+          required: true
+          description: API access token obtained by logging in with GitHub at superheroapi.com.
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          description: Numeric character ID (1–731).
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 731
+            example: 70
+      responses:
+        '200':
+          description: Connections data returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConnectionsResponse'
+  /{access-token}/{id}/image:
+    get:
+      operationId: getCharacterImage
+      summary: Get character image
+      description: Returns only the image sub-section (portrait URL) for the specified character.
+      tags:
+        - Characters
+      parameters:
+        - name: access-token
+          in: path
+          required: true
+          description: API access token obtained by logging in with GitHub at superheroapi.com.
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          description: Numeric character ID (1–731).
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 731
+            example: 70
+      responses:
+        '200':
+          description: Image data returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImageResponse'
+  /{access-token}/search/{name}:
+    get:
+      operationId: searchCharacterByName
+      summary: Search characters by name
+      description: >-
+        Searches for characters whose name matches or contains the provided name string.
+        Returns an array of matching character records.
+      tags:
+        - Search
+      parameters:
+        - name: access-token
+          in: path
+          required: true
+          description: API access token obtained by logging in with GitHub at superheroapi.com.
+          schema:
+            type: string
+        - name: name
+          in: path
+          required: true
+          description: Character name or partial name to search for.
+          schema:
+            type: string
+            example: batman
+      responses:
+        '200':
+          description: Search results returned successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string
+                    enum:
+                      - success
+                      - error
+                  results-for:
+                    type: string
+                    description: The name that was searched.
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Character'
+        '400':
+          description: No results or invalid request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    Powerstats:
+      type: object
+      description: Numeric ratings (0–100) for the six core power attributes of a character.
+      properties:
+        intelligence:
+          type: string
+          description: Intelligence rating (0–100 or "null").
+          example: '100'
+        strength:
+          type: string
+          description: Strength rating (0–100 or "null").
+          example: '26'
+        speed:
+          type: string
+          description: Speed rating (0–100 or "null").
+          example: '27'
+        durability:
+          type: string
+          description: Durability rating (0–100 or "null").
+          example: '50'
+        power:
+          type: string
+          description: Power rating (0–100 or "null").
+          example: '47'
+        combat:
+          type: string
+          description: Combat rating (0–100 or "null").
+          example: '100'
+    Biography:
+      type: object
+      description: Biographical details about the character.
+      properties:
+        full-name:
+          type: string
+          description: The character's real or full name.
+          example: Bruce Wayne
+        alter-egos:
+          type: string
+          description: Alternate ego names, or "No alter egos found." if none.
+          example: No alter egos found.
+        aliases:
+          type: array
+          items:
+            type: string
+          description: List of known aliases.
+          example:
+            - Dark Knight
+            - Caped Crusader
+        place-of-birth:
+          type: string
+          description: Location where the character was born.
+          example: Crest Hill, Bristol Township, NJ
+        first-appearance:
+          type: string
+          description: Comic issue of the character's first appearance.
+          example: Detective Comics #27
+        publisher:
+          type: string
+          description: The comic publisher (e.g., DC Comics, Marvel Comics).
+          example: DC Comics
+        alignment:
+          type: string
+          description: Moral alignment of the character.
+          enum:
+            - good
+            - bad
+            - neutral
+          example: good
+    Appearance:
+      type: object
+      description: Physical appearance attributes of the character.
+      properties:
+        gender:
+          type: string
+          description: Character's gender.
+          example: Male
+        race:
+          type: string
+          description: Character's race or species.
+          example: Human
+        height:
+          type: array
+          items:
+            type: string
+          description: Height expressed in imperial and metric units.
+          example:
+            - '6''2"'
+            - 188 cm
+        weight:
+          type: array
+          items:
+            type: string
+          description: Weight expressed in imperial and metric units.
+          example:
+            - 210 lb
+            - 95 kg
+        eye-color:
+          type: string
+          description: Character's eye color.
+          example: blue
+        hair-color:
+          type: string
+          description: Character's hair color.
+          example: black
+    Work:
+      type: object
+      description: Occupation and home base of the character.
+      properties:
+        occupation:
+          type: string
+          description: Character's occupation or profession.
+          example: Businessman
+        base:
+          type: string
+          description: Character's primary operating base or home location.
+          example: Batcave, Stately Wayne Manor, Gotham City, New Jersey
+    Connections:
+      type: object
+      description: Team affiliations and family/personal relationships.
+      properties:
+        group-affiliation:
+          type: string
+          description: Teams or groups the character is affiliated with.
+          example: Batman Family, Batman Incorporated, Justice League, Outsiders
+        relatives:
+          type: string
+          description: Known relatives or close personal connections.
+          example: Thomas Wayne (father, deceased), Martha Wayne (mother, deceased)
+    Image:
+      type: object
+      description: Portrait image URL for the character.
+      properties:
+        url:
+          type: string
+          format: uri
+          description: Direct URL to the character's portrait image.
+          example: https://www.superheroapi.com/images/api/70/image.jpg
+    Character:
+      type: object
+      description: Complete character record including all sub-sections.
+      properties:
+        response:
+          type: string
+          enum:
+            - success
+            - error
+          description: Response status indicator.
+        id:
+          type: string
+          description: Numeric character ID as a string.
+          example: '70'
+        name:
+          type: string
+          description: Character's superhero or villain name.
+          example: Batman
+        powerstats:
+          $ref: '#/components/schemas/Powerstats'
+        biography:
+          $ref: '#/components/schemas/Biography'
+        appearance:
+          $ref: '#/components/schemas/Appearance'
+        work:
+          $ref: '#/components/schemas/Work'
+        connections:
+          $ref: '#/components/schemas/Connections'
+        image:
+          $ref: '#/components/schemas/Image'
+    PowerstatsResponse:
+      type: object
+      properties:
+        response:
+          type: string
+          enum:
+            - success
+            - error
+        id:
+          type: string
+        name:
+          type: string
+        powerstats:
+          $ref: '#/components/schemas/Powerstats'
+    BiographyResponse:
+      type: object
+      properties:
+        response:
+          type: string
+          enum:
+            - success
+            - error
+        id:
+          type: string
+        name:
+          type: string
+        biography:
+          $ref: '#/components/schemas/Biography'
+    AppearanceResponse:
+      type: object
+      properties:
+        response:
+          type: string
+          enum:
+            - success
+            - error
+        id:
+          type: string
+        name:
+          type: string
+        appearance:
+          $ref: '#/components/schemas/Appearance'
+    WorkResponse:
+      type: object
+      properties:
+        response:
+          type: string
+          enum:
+            - success
+            - error
+        id:
+          type: string
+        name:
+          type: string
+        work:
+          $ref: '#/components/schemas/Work'
+    ConnectionsResponse:
+      type: object
+      properties:
+        response:
+          type: string
+          enum:
+            - success
+            - error
+        id:
+          type: string
+        name:
+          type: string
+        connections:
+          $ref: '#/components/schemas/Connections'
+    ImageResponse:
+      type: object
+      properties:
+        response:
+          type: string
+          enum:
+            - success
+            - error
+        id:
+          type: string
+        name:
+          type: string
+        image:
+          $ref: '#/components/schemas/Image'
+    ErrorResponse:
+      type: object
+      properties:
+        response:
+          type: string
+          enum:
+            - error
+          description: Error status indicator.
+        error:
+          type: string
+          description: Human-readable error message.
+tags:
+  - name: Characters
+    description: Retrieve full or partial character data by numeric ID.
+  - name: Search
+    description: Search for characters by name.
