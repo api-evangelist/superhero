@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Superhero Characters Search API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search characters by name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://superheroapi.com/api.php/:access-token/search/:name",
+            "params": [
+              {
+                "name": "access-token",
+                "value": "",
+                "type": "path",
+                "description": "API access token obtained by logging in with GitHub at superheroapi.com."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Character name or partial name to search for."
+              }
+            ]
+          },
+          "docs": "Searches for characters whose name matches or contains the provided name string. Returns an array of matching character records."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

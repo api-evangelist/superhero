@@ -1,0 +1,188 @@
+{
+  "item": [
+    {
+      "id": "a9b20337-635f-4c44-a4d5-fc1218091d68",
+      "name": "Search",
+      "description": {
+        "content": "Search for characters by name.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "01be5620-bf9f-4a63-8081-b46d2b3d39c0",
+          "name": "Search characters by name",
+          "request": {
+            "name": "Search characters by name",
+            "description": {
+              "content": "Searches for characters whose name matches or contains the provided name string. Returns an array of matching character records.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":access-token",
+                "search",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "access-token",
+                  "description": "(Required) API access token obtained by logging in with GitHub at superheroapi.com."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Character name or partial name to search for."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "70f83744-a21f-4f8c-8568-96f235ef8791",
+              "name": "Search results returned successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":access-token",
+                    "search",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "access-token",
+                      "description": "(Required) API access token obtained by logging in with GitHub at superheroapi.com."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Character name or partial name to search for."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": \"success\",\n  \"results-for\": \"string\",\n  \"results\": [\n    {\n      \"response\": \"error\",\n      \"id\": \"70\",\n      \"name\": \"Batman\",\n      \"powerstats\": {\n        \"intelligence\": \"100\",\n        \"strength\": \"26\",\n        \"speed\": \"27\",\n        \"durability\": \"50\",\n        \"power\": \"47\",\n        \"combat\": \"100\"\n      },\n      \"biography\": {\n        \"full-name\": \"Bruce Wayne\",\n        \"alter-egos\": \"No alter egos found.\",\n        \"aliases\": [\n          \"Dark Knight\",\n          \"Caped Crusader\"\n        ],\n        \"place-of-birth\": \"Crest Hill, Bristol Township, NJ\",\n        \"first-appearance\": \"Detective Comics\",\n        \"publisher\": \"DC Comics\",\n        \"alignment\": \"good\"\n      },\n      \"appearance\": {\n        \"gender\": \"Male\",\n        \"race\": \"Human\",\n        \"height\": [\n          \"6'2\\\"\",\n          \"188 cm\"\n        ],\n        \"weight\": [\n          \"210 lb\",\n          \"95 kg\"\n        ],\n        \"eye-color\": \"blue\",\n        \"hair-color\": \"black\"\n      },\n      \"work\": {\n        \"occupation\": \"Businessman\",\n        \"base\": \"Batcave, Stately Wayne Manor, Gotham City, New Jersey\"\n      },\n      \"connections\": {\n        \"group-affiliation\": \"Batman Family, Batman Incorporated, Justice League, Outsiders\",\n        \"relatives\": \"Thomas Wayne (father, deceased), Martha Wayne (mother, deceased)\"\n      },\n      \"image\": {\n        \"url\": \"https://www.superheroapi.com/images/api/70/image.jpg\"\n      }\n    },\n    {\n      \"response\": \"success\",\n      \"id\": \"70\",\n      \"name\": \"Batman\",\n      \"powerstats\": {\n        \"intelligence\": \"100\",\n        \"strength\": \"26\",\n        \"speed\": \"27\",\n        \"durability\": \"50\",\n        \"power\": \"47\",\n        \"combat\": \"100\"\n      },\n      \"biography\": {\n        \"full-name\": \"Bruce Wayne\",\n        \"alter-egos\": \"No alter egos found.\",\n        \"aliases\": [\n          \"Dark Knight\",\n          \"Caped Crusader\"\n        ],\n        \"place-of-birth\": \"Crest Hill, Bristol Township, NJ\",\n        \"first-appearance\": \"Detective Comics\",\n        \"publisher\": \"DC Comics\",\n        \"alignment\": \"good\"\n      },\n      \"appearance\": {\n        \"gender\": \"Male\",\n        \"race\": \"Human\",\n        \"height\": [\n          \"6'2\\\"\",\n          \"188 cm\"\n        ],\n        \"weight\": [\n          \"210 lb\",\n          \"95 kg\"\n        ],\n        \"eye-color\": \"blue\",\n        \"hair-color\": \"black\"\n      },\n      \"work\": {\n        \"occupation\": \"Businessman\",\n        \"base\": \"Batcave, Stately Wayne Manor, Gotham City, New Jersey\"\n      },\n      \"connections\": {\n        \"group-affiliation\": \"Batman Family, Batman Incorporated, Justice League, Outsiders\",\n        \"relatives\": \"Thomas Wayne (father, deceased), Martha Wayne (mother, deceased)\"\n      },\n      \"image\": {\n        \"url\": \"https://www.superheroapi.com/images/api/70/image.jpg\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8f7dba66-216e-4aa7-a071-904a176b768f",
+              "name": "No results or invalid request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":access-token",
+                    "search",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "access-token",
+                      "description": "(Required) API access token obtained by logging in with GitHub at superheroapi.com."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Character name or partial name to search for."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": \"error\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://superheroapi.com/api.php",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3ff62d18-02da-4570-8e17-af0f6c1c829c",
+    "name": "Superhero Characters Search API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Superhero API is a quantified and programmatically accessible data source of superheroes and villains from across comic book universes. It provides comprehensive character data for 731 heroes and villains including power stats, biography, appearance, work, connections, and image data from Marvel, DC, and other publishers. Developers authenticate via an API access token obtained through GitHub login and query characters by ID or name.",
+      "type": "text/plain"
+    }
+  }
+}

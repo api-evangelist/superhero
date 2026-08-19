@@ -1,0 +1,809 @@
+{
+  "item": [
+    {
+      "id": "d3b152ca-152a-48c8-a877-e2171d974268",
+      "name": "Characters",
+      "description": {
+        "content": "Retrieve full or partial character data by numeric ID.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "972eaccd-ad1c-422b-a20d-ce7cb914fd7b",
+          "name": "Get character by ID",
+          "request": {
+            "name": "Get character by ID",
+            "description": {
+              "content": "Returns the complete character record for the superhero or villain identified by the numeric ID, including all sub-sections (powerstats, biography, appearance, work, connections, image).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":access-token",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "access-token",
+                  "description": "(Required) API access token obtained by logging in with GitHub at superheroapi.com."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric character ID (1–731)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9ac098ac-216c-43bb-a476-64a50fab74d7",
+              "name": "Character data returned successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":access-token",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "access-token",
+                      "description": "(Required) API access token obtained by logging in with GitHub at superheroapi.com."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric character ID (1–731)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": \"success\",\n  \"id\": \"70\",\n  \"name\": \"Batman\",\n  \"powerstats\": {\n    \"intelligence\": \"100\",\n    \"strength\": \"26\",\n    \"speed\": \"27\",\n    \"durability\": \"50\",\n    \"power\": \"47\",\n    \"combat\": \"100\"\n  },\n  \"biography\": {\n    \"full-name\": \"Bruce Wayne\",\n    \"alter-egos\": \"No alter egos found.\",\n    \"aliases\": [\n      \"Dark Knight\",\n      \"Caped Crusader\"\n    ],\n    \"place-of-birth\": \"Crest Hill, Bristol Township, NJ\",\n    \"first-appearance\": \"Detective Comics\",\n    \"publisher\": \"DC Comics\",\n    \"alignment\": \"good\"\n  },\n  \"appearance\": {\n    \"gender\": \"Male\",\n    \"race\": \"Human\",\n    \"height\": [\n      \"6'2\\\"\",\n      \"188 cm\"\n    ],\n    \"weight\": [\n      \"210 lb\",\n      \"95 kg\"\n    ],\n    \"eye-color\": \"blue\",\n    \"hair-color\": \"black\"\n  },\n  \"work\": {\n    \"occupation\": \"Businessman\",\n    \"base\": \"Batcave, Stately Wayne Manor, Gotham City, New Jersey\"\n  },\n  \"connections\": {\n    \"group-affiliation\": \"Batman Family, Batman Incorporated, Justice League, Outsiders\",\n    \"relatives\": \"Thomas Wayne (father, deceased), Martha Wayne (mother, deceased)\"\n  },\n  \"image\": {\n    \"url\": \"https://www.superheroapi.com/images/api/70/image.jpg\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "182249a0-bfe2-48c4-900b-411e5fddffc1",
+              "name": "Invalid request or missing access token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":access-token",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "access-token",
+                      "description": "(Required) API access token obtained by logging in with GitHub at superheroapi.com."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric character ID (1–731)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": \"error\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "28f31cd7-f484-41b8-8b38-02f77d79dea4",
+          "name": "Get character power stats",
+          "request": {
+            "name": "Get character power stats",
+            "description": {
+              "content": "Returns only the powerstats sub-section for the specified character.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":access-token",
+                ":id",
+                "powerstats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "access-token",
+                  "description": "(Required) API access token obtained by logging in with GitHub at superheroapi.com."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric character ID (1–731)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "40983925-e452-4d70-9cca-d02acc5f9ca4",
+              "name": "Powerstats data returned successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":access-token",
+                    ":id",
+                    "powerstats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "access-token",
+                      "description": "(Required) API access token obtained by logging in with GitHub at superheroapi.com."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric character ID (1–731)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": \"error\",\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"powerstats\": {\n    \"intelligence\": \"100\",\n    \"strength\": \"26\",\n    \"speed\": \"27\",\n    \"durability\": \"50\",\n    \"power\": \"47\",\n    \"combat\": \"100\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "91df5676-186f-472a-a273-8266cc0a36a2",
+          "name": "Get character biography",
+          "request": {
+            "name": "Get character biography",
+            "description": {
+              "content": "Returns only the biography sub-section for the specified character.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":access-token",
+                ":id",
+                "biography"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "access-token",
+                  "description": "(Required) API access token obtained by logging in with GitHub at superheroapi.com."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric character ID (1–731)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6da3cf0c-6e58-4e19-819d-99454e961ab5",
+              "name": "Biography data returned successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":access-token",
+                    ":id",
+                    "biography"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "access-token",
+                      "description": "(Required) API access token obtained by logging in with GitHub at superheroapi.com."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric character ID (1–731)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": \"success\",\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"biography\": {\n    \"full-name\": \"Bruce Wayne\",\n    \"alter-egos\": \"No alter egos found.\",\n    \"aliases\": [\n      \"Dark Knight\",\n      \"Caped Crusader\"\n    ],\n    \"place-of-birth\": \"Crest Hill, Bristol Township, NJ\",\n    \"first-appearance\": \"Detective Comics\",\n    \"publisher\": \"DC Comics\",\n    \"alignment\": \"good\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "43546ed3-6d55-4e82-a7aa-4bef90d072b7",
+          "name": "Get character appearance",
+          "request": {
+            "name": "Get character appearance",
+            "description": {
+              "content": "Returns only the appearance sub-section for the specified character.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":access-token",
+                ":id",
+                "appearance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "access-token",
+                  "description": "(Required) API access token obtained by logging in with GitHub at superheroapi.com."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric character ID (1–731)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "94737871-03bb-4810-9df8-cdc7fbeb09f7",
+              "name": "Appearance data returned successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":access-token",
+                    ":id",
+                    "appearance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "access-token",
+                      "description": "(Required) API access token obtained by logging in with GitHub at superheroapi.com."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric character ID (1–731)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": \"success\",\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"appearance\": {\n    \"gender\": \"Male\",\n    \"race\": \"Human\",\n    \"height\": [\n      \"6'2\\\"\",\n      \"188 cm\"\n    ],\n    \"weight\": [\n      \"210 lb\",\n      \"95 kg\"\n    ],\n    \"eye-color\": \"blue\",\n    \"hair-color\": \"black\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "69202fb5-322b-400d-bb06-7317db61c92d",
+          "name": "Get character work",
+          "request": {
+            "name": "Get character work",
+            "description": {
+              "content": "Returns only the work sub-section for the specified character.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":access-token",
+                ":id",
+                "work"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "access-token",
+                  "description": "(Required) API access token obtained by logging in with GitHub at superheroapi.com."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric character ID (1–731)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3b7ee45d-23f6-4b23-b9d6-0607500bfa1d",
+              "name": "Work data returned successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":access-token",
+                    ":id",
+                    "work"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "access-token",
+                      "description": "(Required) API access token obtained by logging in with GitHub at superheroapi.com."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric character ID (1–731)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": \"success\",\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"work\": {\n    \"occupation\": \"Businessman\",\n    \"base\": \"Batcave, Stately Wayne Manor, Gotham City, New Jersey\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "415c9d0c-6515-42f9-819b-be7372d841d6",
+          "name": "Get character connections",
+          "request": {
+            "name": "Get character connections",
+            "description": {
+              "content": "Returns only the connections sub-section for the specified character.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":access-token",
+                ":id",
+                "connections"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "access-token",
+                  "description": "(Required) API access token obtained by logging in with GitHub at superheroapi.com."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric character ID (1–731)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7957cf92-e78d-47c5-bc6f-ab49ff6eff68",
+              "name": "Connections data returned successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":access-token",
+                    ":id",
+                    "connections"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "access-token",
+                      "description": "(Required) API access token obtained by logging in with GitHub at superheroapi.com."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric character ID (1–731)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": \"success\",\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"connections\": {\n    \"group-affiliation\": \"Batman Family, Batman Incorporated, Justice League, Outsiders\",\n    \"relatives\": \"Thomas Wayne (father, deceased), Martha Wayne (mother, deceased)\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "738cf25f-10e4-4809-a278-2cf203dcc043",
+          "name": "Get character image",
+          "request": {
+            "name": "Get character image",
+            "description": {
+              "content": "Returns only the image sub-section (portrait URL) for the specified character.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":access-token",
+                ":id",
+                "image"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "access-token",
+                  "description": "(Required) API access token obtained by logging in with GitHub at superheroapi.com."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric character ID (1–731)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5f64e3ce-1b0a-42cf-8539-4baf9003c1f0",
+              "name": "Image data returned successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":access-token",
+                    ":id",
+                    "image"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "access-token",
+                      "description": "(Required) API access token obtained by logging in with GitHub at superheroapi.com."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric character ID (1–731)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": \"success\",\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"image\": {\n    \"url\": \"https://www.superheroapi.com/images/api/70/image.jpg\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://superheroapi.com/api.php",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4abf66dd-5190-4ebc-8118-1bb2fc9b6715",
+    "name": "Superhero Characters API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Superhero API is a quantified and programmatically accessible data source of superheroes and villains from across comic book universes. It provides comprehensive character data for 731 heroes and villains including power stats, biography, appearance, work, connections, and image data from Marvel, DC, and other publishers. Developers authenticate via an API access token obtained through GitHub login and query characters by ID or name.",
+      "type": "text/plain"
+    }
+  }
+}

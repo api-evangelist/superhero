@@ -1,0 +1,193 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Superhero Characters API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Characters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get character by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://superheroapi.com/api.php/:access-token/:id",
+            "params": [
+              {
+                "name": "access-token",
+                "value": "",
+                "type": "path",
+                "description": "API access token obtained by logging in with GitHub at superheroapi.com."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Numeric character ID (1–731)."
+              }
+            ]
+          },
+          "docs": "Returns the complete character record for the superhero or villain identified by the numeric ID, including all sub-sections (powerstats, biography, appearance, work, connections, image)."
+        },
+        {
+          "info": {
+            "name": "Get character power stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://superheroapi.com/api.php/:access-token/:id/powerstats",
+            "params": [
+              {
+                "name": "access-token",
+                "value": "",
+                "type": "path",
+                "description": "API access token obtained by logging in with GitHub at superheroapi.com."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Numeric character ID (1–731)."
+              }
+            ]
+          },
+          "docs": "Returns only the powerstats sub-section for the specified character."
+        },
+        {
+          "info": {
+            "name": "Get character biography",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://superheroapi.com/api.php/:access-token/:id/biography",
+            "params": [
+              {
+                "name": "access-token",
+                "value": "",
+                "type": "path",
+                "description": "API access token obtained by logging in with GitHub at superheroapi.com."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Numeric character ID (1–731)."
+              }
+            ]
+          },
+          "docs": "Returns only the biography sub-section for the specified character."
+        },
+        {
+          "info": {
+            "name": "Get character appearance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://superheroapi.com/api.php/:access-token/:id/appearance",
+            "params": [
+              {
+                "name": "access-token",
+                "value": "",
+                "type": "path",
+                "description": "API access token obtained by logging in with GitHub at superheroapi.com."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Numeric character ID (1–731)."
+              }
+            ]
+          },
+          "docs": "Returns only the appearance sub-section for the specified character."
+        },
+        {
+          "info": {
+            "name": "Get character work",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://superheroapi.com/api.php/:access-token/:id/work",
+            "params": [
+              {
+                "name": "access-token",
+                "value": "",
+                "type": "path",
+                "description": "API access token obtained by logging in with GitHub at superheroapi.com."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Numeric character ID (1–731)."
+              }
+            ]
+          },
+          "docs": "Returns only the work sub-section for the specified character."
+        },
+        {
+          "info": {
+            "name": "Get character connections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://superheroapi.com/api.php/:access-token/:id/connections",
+            "params": [
+              {
+                "name": "access-token",
+                "value": "",
+                "type": "path",
+                "description": "API access token obtained by logging in with GitHub at superheroapi.com."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Numeric character ID (1–731)."
+              }
+            ]
+          },
+          "docs": "Returns only the connections sub-section for the specified character."
+        },
+        {
+          "info": {
+            "name": "Get character image",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://superheroapi.com/api.php/:access-token/:id/image",
+            "params": [
+              {
+                "name": "access-token",
+                "value": "",
+                "type": "path",
+                "description": "API access token obtained by logging in with GitHub at superheroapi.com."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Numeric character ID (1–731)."
+              }
+            ]
+          },
+          "docs": "Returns only the image sub-section (portrait URL) for the specified character."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
