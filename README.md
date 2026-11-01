@@ -64,34 +64,145 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-APIs.json 0.19 provider profile for the Superhero API — a free REST API providing comprehensive data on 731 superheroes and villains from Marvel, DC, and other comic universes.
+The Superhero API is a quantified and programmatically accessible data source of superheroes and villains from across comic book universes. It provides comprehensive character data for 731 heroes and villains including power stats, biography, appearance, work, connections, and image data from Marvel, DC, and other publishers. Developers authenticate via an API access token obtained through GitHub login and query characters by ID or name.
 
-## Overview
+**Areas:** Superheroes · Comics · Characters · Marvel · DC Comics · Entertainment · Open Data
 
-The Superhero API (superheroapi.com) gives developers programmatic access to character data including power stats, biography, appearance, work, connections, and portrait images. Authentication uses a personal access token embedded in the request URL, obtained by signing in with GitHub at superheroapi.com.
+## Superhero API on APIs.io
 
-**Base URL:** `https://superheroapi.com/api.php/{access-token}/{character-id}`
+Everything profiled for Superhero API is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/superhero/](https://apis.io/providers/superhero/)** — or go straight to one of the APIs or properties below.
 
-## Endpoints
+### APIs (2)
 
-| Endpoint | Description |
-|----------|-------------|
-| `/{token}/{id}` | Full character record |
-| `/{token}/{id}/powerstats` | Intelligence, strength, speed, durability, power, combat |
-| `/{token}/{id}/biography` | Full name, alter egos, first appearance, publisher, alignment |
-| `/{token}/{id}/appearance` | Gender, race, height, weight, eye color, hair color |
-| `/{token}/{id}/work` | Occupation and base of operations |
-| `/{token}/{id}/connections` | Group affiliations and relatives |
-| `/{token}/{id}/image` | Portrait image URL |
-| `/{token}/search/{name}` | Search characters by name |
+- [Superhero API Characters API](https://apis.io/apis/superhero/superhero-characters-api/) — Retrieve full or partial character data by numeric ID.
+- [Superhero API Search API](https://apis.io/apis/superhero/superhero-search-api/) — Search for characters by name.
 
-## Artifacts
+### Published properties
 
-- `apis.yml` — APIs.json 0.19 index
-- `plans/superhero-plans-pricing.yml` — API Commons Plans schema
-- `rate-limits/superhero-rate-limits.yml` — API Commons Rate Limits schema
-- `finops/superhero-finops.yml` — FinOps Framework FOCUS-aligned definition
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Maintainer
+#### Agentic access (1)
 
-Kin Lane &lt;kin@apievangelist.com&gt;
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Superhero Agentic Access](https://apis.io/agentic-access/superhero/superhero-agentic-access/)
+
+#### JSON Schema (1)
+
+The data models the API reads and writes.
+
+- [Character](https://apis.io/schemas/superhero/character/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [context Context](https://apis.io/jsonld/superhero/context/)
+
+#### Examples (3)
+
+Example requests and responses.
+
+- [Batman](https://apis.io/examples/superhero/batman/)
+- [Search Results](https://apis.io/examples/superhero/search-results/)
+- [Spider Man](https://apis.io/examples/superhero/spider-man/)
+
+#### Collections (2)
+
+Postman and Open Collection request collections.
+
+- [Superhero Characters API](https://apis.io/collections/superhero/open-superhero-characters-api/)
+- [Superhero Characters Search API](https://apis.io/collections/superhero/open-superhero-search-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Superhero API — jsonschema rules](https://apis.io/rules/superhero/superhero-jsonschema-spectral-rules/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Superhero Domain Security](https://apis.io/security/superhero/superhero-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Superhero Plans Pricing](https://apis.io/plans/superhero/superhero-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Superhero Rate Limits](https://apis.io/rate-limits/superhero/superhero-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Superhero Finops](https://apis.io/finops/superhero/superhero-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.superheroapi.com/)
+- [Documentation](https://www.superheroapi.com/api.html)
+- [Pricing](https://www.superheroapi.com/)
+- [Blog](https://www.superheroapi.com/)
+- [Status](https://www.superheroapi.com/)
+
+## API Evangelist rating
+
+**Kin Score 30.6** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 57.9 |
+| Contract governance | 23.5 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 2.4 |
+| Access clarity | 15.8 |
+
+**Agent readiness 22.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.8** — Government & Public Sector
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/superhero/](https://apis.io/providers/superhero/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Superhero API: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/superhero/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
